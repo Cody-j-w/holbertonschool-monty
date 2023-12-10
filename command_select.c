@@ -11,11 +11,6 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
     instruction_t list[] = {
         {"push", push_m},
         {"pall", pall_m},
-        {"pint", pint_m},
-        {"pop", pop_m},
-        {"add", add_m},
-        {"nop", nop_m},
-        {"$", nop_m},
         {NULL, NULL}
     }
 
