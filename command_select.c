@@ -16,7 +16,7 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
 
     while (list[i] != NULL)
     {
-        comparison = strcmp(op, list[i]);
+        comparison = strcmp(op, list[i].opcode);
         if (comparison == 0)
             return (list[i].f);
         i++;
