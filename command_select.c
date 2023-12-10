@@ -12,7 +12,7 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
         {"push", push_m},
         {"pall", pall_m},
         {NULL, NULL}
-    }
+    };
 
     while (instructions[i] != NULL)
     {
