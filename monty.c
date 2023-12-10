@@ -8,7 +8,8 @@
 
 int main(int argc, char *argv[])
 {
-    size_t buffsize = 512, data = 0, count = 0;
+    size_t buffsize = 512;
+    unsigned int data = 0, count = 0;
     char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
     stack_t *stack = NULL;
     FILE *file = fopen(argv[1], "r");
