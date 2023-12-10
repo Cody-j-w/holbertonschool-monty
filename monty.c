@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     size_t buffsize = 512;
     unsigned int data = 0, count = 0;
     char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
-    stack_t *stack = NULL;
+    stack_t **stack = NULL;
     FILE *file = fopen(argv[1], "r");
-    void (*op_func)(stack_t **, int);
+    void (*op_func)(stack_t **, unsigned int);
 
     if (argc != 2)
     {
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         op_func = get_command(cmd);
             if (op_func == NULL)
             {
-                fprintf(stderr, "L%d: unknown instruction %s\n", count, cmd);
+                fprintf(stderr, "L %d: unknown instruction %s\n", count, cmd);
                 exit(EXIT_FAILURE);
             }
         op_func(stack, data);
