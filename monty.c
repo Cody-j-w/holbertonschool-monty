@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
             }
         op_func(stack, data);
     }
-    free_stack(stack);
+    free_stack(*stack);
     free(buffer);
     return(EXIT_SUCCESS);
 }
