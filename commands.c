@@ -10,7 +10,8 @@ void push_m(stack_t **head, unsigned int data)
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{
-		return (NULL);
+		fprintf(stderr, "Error: malloc failed\n");
+        exit(EXIT_FAILURE);
 	}
 	new_node->n = data;
 	if (*head == NULL)
@@ -33,19 +34,19 @@ void pall_m(stack_t **head, unsigned int data __attribute__((unused)))
 	stack_t *temp = NULL;
 
 	if (*head == NULL)
-		return (0);
-	temp = *head;
-	if ((*head)->prev != NULL)
-	{
-		while (temp->prev != NULL)
-		{
-			temp = temp->prev;
-		}
-	}
-	while (temp != NULL)
-	{
-		count++;
-		printf("%d\n", temp->n);
-		temp = temp->next;
-	}
+    {
+        temp = *head;
+        if ((*head)->prev != NULL)
+        {
+            while (temp->prev != NULL)
+            {
+                temp = temp->prev;
+            }
+        }
+        while (temp != NULL)
+        {
+            printf("%d\n", temp->n);
+            temp = temp->next;
+        }
+    }
 }
