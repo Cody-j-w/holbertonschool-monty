@@ -14,7 +14,7 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
         {NULL, NULL}
     };
 
-    while (instructions[i] != NULL)
+    while (list[i] != NULL)
     {
         comparison = strcmp(op, list[i]);
         if (comparison == 0)
