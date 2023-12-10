@@ -1,3 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "monty.h"
+
 void push_m(stack_t **head, unsigned int data)
 {
 	stack_t *new_node;
