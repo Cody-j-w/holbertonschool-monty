@@ -5,7 +5,7 @@
 
 void push_m(stack_t **head, unsigned int data)
 {
-	stack_t *new_node;
+	stack_t *new_node = NULL;
 
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
@@ -16,9 +16,11 @@ void push_m(stack_t **head, unsigned int data)
 	new_node->n = data;
 	if (*head == NULL)
 	{
-		new_node->next = NULL;
-		new_node->prev = NULL;
-		*head = new_node;
+        free(new_node);
+        *head = malloc(sizeof(stack_t));
+	    (*head)->next = NULL;
+	    (*head)->prev = NULL;
+        (*head)->n = data;
 	}
 	else
 	{
@@ -31,22 +33,11 @@ void push_m(stack_t **head, unsigned int data)
 
 void pall_m(stack_t **head, unsigned int data __attribute__((unused)))
 {
-	stack_t *temp = NULL;
+	stack_t *temp = *head;
 
-	if (*head == NULL)
+    while (temp != NULL)
     {
-        temp = *head;
-        if ((*head)->prev != NULL)
-        {
-            while (temp->prev != NULL)
-            {
-                temp = temp->prev;
-            }
-        }
-        while (temp != NULL)
-        {
-            printf("%d\n", temp->n);
-            temp = temp->next;
-        }
+        printf("%d\n", temp->n);
+        temp = temp->next;
     }
 }
