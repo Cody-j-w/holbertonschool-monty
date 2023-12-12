@@ -16,15 +16,9 @@ int main(int argc, char *argv[])
     void (*op_func)(stack_t **, unsigned int);
 
     if (argc != 2)
-    {
-        fprintf(stderr, "USAGE: monty file\n");
-        exit(EXIT_FAILURE);
-    }
+        count_error();
     if (file == NULL)
-    {
-        fprintf(stderr, "Error: Can't open file %s", argv[1]);
-        exit(EXIT_FAILURE);
-    }
+        null_file(argv[1]);
 
     while (getline(&buffer, &buffsize, file) != -1)
     {
@@ -36,16 +30,16 @@ int main(int argc, char *argv[])
         if (temp != NULL)
             data = atoi(temp);
         temp = NULL;
-        op_func = get_command(cmd);
-            if (op_func == NULL)
-            {
-                fprintf(stderr, "L %d: unknown instruction %s\n", count, cmd);
-                exit(EXIT_FAILURE);
-            }
-        op_func(&stack, data);
+        if (cmd != NULL)
+            op_func = get_command(cmd);
+        if (op_func == NULL)
+            null_command(cmd, count);
+        else
+            op_func(&stack, data);
     }
     free_stack(stack);
     free(buffer);
+    fclose(file);
     return(EXIT_SUCCESS);
 }
 
