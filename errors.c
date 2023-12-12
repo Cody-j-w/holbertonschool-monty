@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "monty.h"
+
 void null_file(char *str)
 {
     fprintf(stderr, "Error: Can't open file %s\n", str);
