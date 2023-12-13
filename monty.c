@@ -26,9 +26,7 @@ int main(int argc, char *argv[])
         if ((cmd = cmdstr(strtok(buffer, " \n")))[0] == '\0')
             continue;
         data = cmdval(strtok(0, " \n"), count);
-        temp = NULL;
-        if (cmd != NULL)
-            op_func = get_command(cmd);
+        op_func = get_command(cmd);
         if (op_func == NULL)
             null_command(cmd, count);
         else
