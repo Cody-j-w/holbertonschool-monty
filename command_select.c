@@ -28,4 +28,5 @@ void (*get_command(char *op, int count))(stack_t **stack, unsigned int line_numb
 		i++;
 	}
 	null_command(op, count);
+	exit(EXIT_FAILURE);
 }
