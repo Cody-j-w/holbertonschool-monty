@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     while (getline(&buffer, &buffsize, file) != -1)
     {
         count++;
-        if ((cmd = cmdstr(strtok(file, " \n")))[0] == '\0')
+        if ((cmd = cmdstr(strtok(buffer, " \n")))[0] == '\0')
             continue;
         data = cmdval(strtok(0, " \n"), count);
         temp = NULL;
