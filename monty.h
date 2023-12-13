@@ -37,6 +37,7 @@ int cmdval(char *, int);
 void (*get_command(char *op))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void null_file(char *);
+void null_int(int);
 void count_error(void);
 void null_command(char *, int);
 void push_m(stack_t **, unsigned int);
