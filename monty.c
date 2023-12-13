@@ -4,7 +4,13 @@
 #include <unistd.h>
 #include "monty.h"
 
-
+/**
+ * main - main body of program
+ * @argc: the count of arguments passed to program
+ * @argv: the list of arguments passed to program
+ * 
+ * Return: 0 on success, 1 on error
+*/
 
 int main(int argc, char *argv[])
 {
@@ -45,6 +51,11 @@ int main(int argc, char *argv[])
 	return(EXIT_SUCCESS);
 }
 
+/**
+ * free_stack - frees a stack if the program closes with remaining nodes
+ * @head: the top of the stack
+*/
+
 void free_stack(stack_t *head)
 {
 		stack_t *temp;
@@ -57,12 +68,26 @@ void free_stack(stack_t *head)
 	}
 }
 
+/**
+ * cmdstr - checks if a passed string is empty
+ * @str: the checked string
+ * Return: the string "empty", to inform the loop to skip the current iteration
+*/
+
 char *cmdstr(char *str)
 {
 	if (str == NULL)
 		return ("empty");
 	return (str);
 }
+
+/**
+ * cmdval - checks if a passed string can be converted into a valid integer
+ * @str: the checked string
+ * @count: the current line count, for error handling purposes
+ * Return: if the checked string was a valid number, return it as an integer
+ * otherwise, throw an error
+*/
 
 int cmdval(char *str, int count)
 {

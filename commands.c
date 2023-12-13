@@ -3,6 +3,11 @@
 #include <string.h>
 #include "monty.h"
 
+/**
+ * push_m - create a new node on the stack
+ * @head: the top of the stack
+ * @data: the data contained in the new node
+*/
 void push_m(stack_t **head, unsigned int data)
 {
 	stack_t *new_node = NULL;
@@ -30,6 +35,11 @@ void push_m(stack_t **head, unsigned int data)
 		*head = new_node;
 	}
 }
+
+/**
+ * pall - print the data of all current nodes in the stack
+ * @head: the top of the stack
+*/
 
 void pall_m(stack_t **head)
 {
