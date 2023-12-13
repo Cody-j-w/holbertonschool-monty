@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
     size_t buffsize = 512;
     unsigned int data = 0, count = 0;
-    char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
+    char *buffer = malloc(buffsize * sizeof(char)), *cmd;
     stack_t *stack = NULL;
     FILE *file = fopen(argv[1], "r");
     void (*op_func)(stack_t **, unsigned int);
@@ -62,7 +62,7 @@ char *cmdstr(char *str)
 int cmdval(char *str, int count)
 {
     int i;
-    valcheck = strcmp(str, "");
+    int valcheck = strcmp(str, "");
     if (str == NULL || valcheck == 0)
         null_int(count);
     while (str[i] != '\0')
