@@ -23,12 +23,9 @@ int main(int argc, char *argv[])
     while (getline(&buffer, &buffsize, file) != -1)
     {
         count++;
-        temp = strtok(buffer, " \n");
-        if (temp != NULL)
-            cmd = temp;
-        temp = strtok(0, " \n");
-        if (temp != NULL)
-            data = atoi(temp);
+        if ((cmd = cmdstr(strtok(file, " \n")))[0] == '\0')
+            continue;
+        data = cmdval(strtok(0, " \n"), count);
         temp = NULL;
         if (cmd != NULL)
             op_func = get_command(cmd);
@@ -53,4 +50,25 @@ void free_stack(stack_t *head)
 		head = head->next;
 		free(temp);
 	}
+}
+
+char *cmdstr(char *str)
+{
+    if (str == NULL)
+        count_error();
+    return (str);
+}
+
+int cmdval(char *str, int count)
+{
+    int i;
+    valcheck = strcmp(str, "");
+    if (str == NULL || valcheck == 0)
+        null_int(count);
+    while (str[i] != '\0')
+    {
+        if (str[i] < '0' || str[i] > '9')
+            null_int(count);
+    }
+    return (atoi(str));
 }

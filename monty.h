@@ -32,6 +32,8 @@ typedef struct instruction_s
 } instruction_t;
 
 /*function prototypes*/
+char *cmdstr(char *);
+int cmdval(char *, int);
 void (*get_command(char *op))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void null_file(char *);
