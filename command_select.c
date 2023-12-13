@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include "monty.h"
 
-void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
+void (*get_command(char *op, int count))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 	int comparison;
@@ -20,5 +20,5 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
 			return (list[i].f);
 		i++;
 	}
-	return (NULL);
+	null_command(op, count);
 }

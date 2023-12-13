@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		if ((temp = strtok(0, " \n")) == NULL)
 			null_int(count);
 		data = cmdval(temp, count);
-		op_func = get_command(cmd);
+		op_func = get_command(cmd, count);
 		if (op_func == NULL)
 			null_command(cmd, count);
 		else
