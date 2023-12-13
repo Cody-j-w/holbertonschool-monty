@@ -41,5 +41,5 @@ void null_int(int);
 void count_error(void);
 void null_command(char *, int);
 void push_m(stack_t **, unsigned int);
-void pall_m(stack_t **, unsigned int);
+void pall_m(stack_t **);
 #endif

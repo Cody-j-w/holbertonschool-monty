@@ -10,11 +10,10 @@ void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
     int comparison;
     instruction_t list[] = {
         {"push", push_m},
-        {"pall", pall_m},
         {NULL, NULL}
     };
 
-    while (i < 3)
+    while (i < 2)
     {
         comparison = strcmp(op, list[i].opcode);
         if (comparison == 0)

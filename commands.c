@@ -31,7 +31,7 @@ void push_m(stack_t **head, unsigned int data)
 	}
 }
 
-void pall_m(stack_t **head, unsigned int data __attribute__((unused)))
+void pall_m(stack_t **head)
 {
 	stack_t *temp = *head;
 
