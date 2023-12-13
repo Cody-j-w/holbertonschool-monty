@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     while (getline(&buffer, &buffsize, file) != -1)
     {
         count++;
-        if ((cmd = cmdstr(strtok(buffer, " \n")))[0] == '\0')
+        if (strcmp((cmd = cmdstr(strtok(buffer, " \n"))), "empty") == 0)
             continue;
         if ((temp = strtok(0, " \n")) == NULL)
             null_int(count);
@@ -55,7 +55,7 @@ void free_stack(stack_t *head)
 char *cmdstr(char *str)
 {
     if (str == NULL)
-        count_error();
+        return ("empty");
     return (str);
 }
 
