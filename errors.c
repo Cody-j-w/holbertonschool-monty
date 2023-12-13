@@ -23,4 +23,5 @@ void null_command(char *command, int count)
 void null_int(int count)
 {
     fprintf(stderr, "L %d: usage: push integer\n", count);
+    exit(EXIT_FAILURE);
 }
