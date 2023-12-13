@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         count++;
         if (strcmp((cmd = cmdstr(strtok(buffer, " \n"))), "empty") == 0)
             continue;
-        if ((temp = strtok(0, " \n")) == NULL)
+        if ((temp = strtok(0, " \n")) == NULL && strcmp(cmd, "pall") != 0)
             null_int(count);
         data = cmdval(temp, count);
         op_func = get_command(cmd);
