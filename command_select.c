@@ -8,7 +8,7 @@
  * get_command - fetch the command passed, if it is valid
  * @op: the command to be returned
  * @count: the current line number of the file, for error handling
- * 
+ *
  * Return: the requested command, if valid
 */
 void (*get_command(char *op, int count))(stack_t **stack, unsigned int data)

@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 	free_stack(stack);
 	free(buffer);
 	fclose(file);
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
 
 /**
