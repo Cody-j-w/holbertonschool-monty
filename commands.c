@@ -37,7 +37,7 @@ void push_m(stack_t **head, unsigned int data)
 }
 
 /**
- * pall - print the data of all current nodes in the stack
+ * pall_m - print the data of all current nodes in the stack
  * @head: the top of the stack
 */
 

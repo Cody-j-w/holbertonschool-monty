@@ -8,7 +8,7 @@
  * main - main body of program
  * @argc: the count of arguments passed to program
  * @argv: the list of arguments passed to program
- * 
+ *
  * Return: 0 on success, 1 on error
 */
 
@@ -29,14 +29,16 @@ int main(int argc, char *argv[])
 	while (getline(&buffer, &buffsize, file) != -1)
 	{
 		count++;
-		if (strcmp((cmd = cmdstr(strtok(buffer, " \n"))), "empty") == 0)
+		cmd = cmdstr(strtok(buffer, " \n"));
+		if (strcmp(cmd, "empty") == 0)
 			continue;
 		if (strcmp(cmd, "pall") == 0)
 		{
 			pall_m(&stack);
 			continue;
 		}
-		if ((temp = strtok(0, " \n")) == NULL)
+		temp = strtok(0, " \n");
+		if (temp == NULL)
 			null_int(count);
 		data = cmdval(temp, count);
 		op_func = get_command(cmd, count);
@@ -93,6 +95,7 @@ int cmdval(char *str, int count)
 {
 	int i = 0;
 	int valcheck = strcmp(str, "");
+
 	if (str == NULL || valcheck == 0)
 		null_int(count);
 	while (str[i] != '\0')

@@ -11,7 +11,7 @@
  * 
  * Return: the requested command, if valid
 */
-void (*get_command(char *op, int count))(stack_t **stack, unsigned int line_number)
+void (*get_command(char *op, int count))(stack_t **stack, unsigned int data)
 {
 	int i = 0;
 	int comparison;
