@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
     size_t buffsize = 512;
     unsigned int data = 0, count = 0;
-    char *buffer = malloc(buffsize * sizeof(char)), *cmd;
+    char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
     stack_t *stack = NULL;
     FILE *file = fopen(argv[1], "r");
     void (*op_func)(stack_t **, unsigned int);
@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
         count++;
         if ((cmd = cmdstr(strtok(buffer, " \n")))[0] == '\0')
             continue;
-        data = cmdval(strtok(0, " \n"), count);
+        if ((temp = strtok(0, " \n")) == NULL)
+            data = cmdval(temp, count);
         op_func = get_command(cmd);
         if (op_func == NULL)
             null_command(cmd, count);
