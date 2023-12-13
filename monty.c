@@ -97,7 +97,7 @@ int cmdval(char *str, int count)
 		null_int(count);
 	while (str[i] != '\0')
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (str[i] < '-' || str[i] > '9')
 			null_int(count);
 		i++;
 	}
