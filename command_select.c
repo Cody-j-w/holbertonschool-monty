@@ -6,19 +6,19 @@
 
 void (*get_command(char *op))(stack_t **stack, unsigned int line_number)
 {
-    int i = 0;
-    int comparison;
-    instruction_t list[] = {
-        {"push", push_m},
-        {NULL, NULL}
-    };
+	int i = 0;
+	int comparison;
+	instruction_t list[] = {
+		{"push", push_m},
+		{NULL, NULL}
+	};
 
-    while (i < 2)
-    {
-        comparison = strcmp(op, list[i].opcode);
-        if (comparison == 0)
-            return (list[i].f);
-        i++;
-    }
-    return (NULL);
+	while (i < 2)
+	{
+		comparison = strcmp(op, list[i].opcode);
+		if (comparison == 0)
+			return (list[i].f);
+		i++;
+	}
+	return (NULL);
 }
