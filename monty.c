@@ -59,7 +59,7 @@ char *cmdstr(char *str)
 
 int cmdval(char *str, int count)
 {
-    int i;
+    int i = 0;
     int valcheck = strcmp(str, "");
     if (str == NULL || valcheck == 0)
         null_int(count);
@@ -67,6 +67,7 @@ int cmdval(char *str, int count)
     {
         if (str[i] < '0' || str[i] > '9')
             null_int(count);
+        i++;
     }
     return (atoi(str));
 }
