@@ -20,7 +20,7 @@ void (*get_command(char *op, int count))(stack_t **stack, unsigned int line_numb
 		{NULL, NULL}
 	};
 
-	while (i < 2)
+	while (i < 1)
 	{
 		comparison = strcmp(op, list[i].opcode);
 		if (comparison == 0)
