@@ -16,12 +16,12 @@ void count_error(void)
 
 void null_command(char *command, int count)
 {
-    fprintf(stderr, "L %d: unknown instruction %s\n", count, command);
+    fprintf(stderr, "L%d: unknown instruction %s\n", count, command);
     exit(EXIT_FAILURE);
 }
 
 void null_int(int count)
 {
-    fprintf(stderr, "L %d: usage: push integer\n", count);
+    fprintf(stderr, "L%d: usage: push integer\n", count);
     exit(EXIT_FAILURE);
 }
