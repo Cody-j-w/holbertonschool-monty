@@ -43,7 +43,14 @@ void null_int(unsigned int);
 void count_error(void);
 void null_command(char *, unsigned int);
 void pint_err(unsigned int);
+void pop_err(unsigned int);
+void swap_err(unsigned int);
+void add_err(unsigned int);
 void push_m(stack_t **, unsigned int);
 void pall_m(stack_t **, unsigned int);
 void pint_m(stack_t **, unsigned int);
+void pop_m(stack_t **, unsigned int);
+void swap_m(stack_t **, unsigned int);
+void add_m(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
 #endif
