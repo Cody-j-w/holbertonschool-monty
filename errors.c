@@ -28,6 +28,7 @@ void count_error(void)
 */
 void null_command(char *command)
 {
+	extern int line_count;
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_count, command);
 	exit(EXIT_FAILURE);
 }
@@ -38,12 +39,14 @@ void null_command(char *command)
 */
 void null_int(void)
 {
+	extern int line_count;
 	fprintf(stderr, "L%d: usage: push integer\n", line_count);
 	exit(EXIT_FAILURE);
 }
 
 void pint_err(void)
 {
+	extern int line_count;
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_count);
 	exit(EXIT_FAILURE);
 }
