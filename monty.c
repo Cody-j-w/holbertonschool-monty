@@ -17,7 +17,8 @@ unsigned int line_count;
 int main(int argc, char *argv[])
 {
 	size_t buffsize = 512;
-	unsigned int data = 0, line_count = 0;
+	unsigned int data = 0;
+	extern unsigned int line_count = 0;
 	char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
 	stack_t *stack = NULL;
 	FILE *file = fopen(argv[1], "r");
