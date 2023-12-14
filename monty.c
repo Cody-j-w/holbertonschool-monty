@@ -103,3 +103,14 @@ int cmdval(char *str, unsigned int line)
 	}
 	return (atoi(str));
 }
+
+/**
+ * nop_m - does nothing
+ * @stack: a stack node, unused
+ * @line: the current line number, unused
+*/
+void nop(stack_t **stack, unsigned int line)
+{
+	(void)stack;
+	(void)line;
+}
