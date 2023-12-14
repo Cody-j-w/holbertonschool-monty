@@ -43,7 +43,7 @@ void (*get_print(char *op))(stack_t **stack, unsigned int data)
 
 	while (i < 2)
 	{
-		comparison = strcmp(op, list[i].opcode);
+		comparison = strcmp(op, p_list[i].opcode);
 		if (comparison == 0)
 			return (p_list[i].f);
 		i++;

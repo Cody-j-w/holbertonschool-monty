@@ -31,6 +31,8 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int data);
 } instruction_t;
 
+extern unsigned int line_count;
+
 /*function prototypes*/
 char *cmdstr(char *);
 int cmdval(char *);
@@ -43,6 +45,6 @@ void count_error(void);
 void null_command(char *);
 void pint_err(void);
 void push_m(stack_t **, unsigned int);
-void pall_m(stack_t **);
-void pint_m(stack_t **);
+void pall_m(stack_t **, unsigned int);
+void pint_m(stack_t **, unsigned int);
 #endif

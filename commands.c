@@ -41,7 +41,7 @@ void push_m(stack_t **head, unsigned int data)
  * @head: the top of the stack
 */
 
-void pall_m(stack_t **head)
+void pall_m(stack_t **head, unsigned int data __attribute__((unused)))
 {
 	stack_t *temp = *head;
 
@@ -52,9 +52,9 @@ void pall_m(stack_t **head)
 	}
 }
 
-void pint_m(stack_t **head)
+void pint_m(stack_t **head, unsigned int data __attribute__((unused)))
 {
 	if (*head == NULL)
 		pint_err();
-	printf("%s\n", (*head)->n);
+	printf("%u\n", (*head)->n);
 }
