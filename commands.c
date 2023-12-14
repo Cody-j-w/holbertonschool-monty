@@ -76,8 +76,16 @@ void pop_m(stack_t **head, unsigned int line)
 		pop_err(line);
 	temp = *head;
 	if ((*head)->next != NULL)
+	{
 		*head = (*head)->next;
+		(*head)->prev = NULL;
+	}
+	else
+	{
+		*head = NULL;
+	}
 	free(temp);
+	temp = NULL;
 }
 
 /**
