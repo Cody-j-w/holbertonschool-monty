@@ -56,4 +56,5 @@ void pint_m(stack_t **head)
 {
 	if (*head == NULL)
 		pint_err();
+	printf("%s\n", (*head)->n);
 }

@@ -34,9 +34,10 @@ int main(int argc, char *argv[])
 		cmd = cmdstr(strtok(buffer, " \n"));
 		if (strcmp(cmd, "empty") == 0)
 			continue;
-		if (strcmp(cmd, "pall") == 0)
+		op_func = get_print(op);
+		if (op_func != NULL)
 		{
-			pall_m(&stack);
+			op_func(&stack, 0);
 			continue;
 		}
 		temp = strtok(0, " \n");

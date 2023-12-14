@@ -35,6 +35,7 @@ typedef struct instruction_s
 char *cmdstr(char *);
 int cmdval(char *);
 void (*get_command(char *op))(stack_t **, unsigned int);
+void (*get_print(char *op))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void null_file(char *);
 void null_int(void);

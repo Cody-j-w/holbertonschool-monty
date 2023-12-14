@@ -30,3 +30,23 @@ void (*get_command(char *op))(stack_t **stack, unsigned int data)
 	null_command(op);
 	exit(EXIT_FAILURE);
 }
+
+void (*get_print(char *op))(stack_t **stack, unsigned int data)
+{
+	int i = 0;
+	int comparison;
+	instruction_t p_list[] = {
+		{"pall", pall_m},
+		{"pint", pint_m},
+		{NULL, NULL}
+	};
+
+	while (i < 2)
+	{
+		comparison = strcmp(op, list[i].opcode);
+		if (comparison == 0)
+			return (p_list[i].f);
+		i++;
+	}
+	return (0);
+}
