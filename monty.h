@@ -35,7 +35,7 @@ extern unsigned int line_count;
 
 /*function prototypes*/
 char *cmdstr(char *);
-int cmdval(char *);
+int cmdval(char *, unsigned int);
 void (*get_command(char *op, unsigned int))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void null_file(char *);

@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			push_m(&stack, data);
 			continue;
 		}
-		op_func = get_command(cmd);
+		op_func = get_command(cmd, line_count);
 		op_func(&stack, line_count);
 	}
 	free_stack(stack);
