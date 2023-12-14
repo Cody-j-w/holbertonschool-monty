@@ -36,8 +36,8 @@ int main(int argc, char *argv[])
 		{
 			temp = strtok(0, " \n");
 			if (temp == NULL)
-				null_int();
-			data = cmdval(temp);
+				null_int(line_count);
+			data = cmdval(temp, line_count);
 			push_m(&stack, data);
 			continue;
 		}
@@ -88,17 +88,17 @@ char *cmdstr(char *str)
  * otherwise, throw an error
 */
 
-int cmdval(char *str)
+int cmdval(char *str, unsigned int line)
 {
 	int i = 0;
 	int valcheck = strcmp(str, "");
 
 	if (str == NULL || valcheck == 0)
-		null_int();
+		null_int(line);
 	while (str[i] != '\0')
 	{
 		if (str[i] < '-' || str[i] > '9')
-			null_int();
+			null_int(line);
 		i++;
 	}
 	return (atoi(str));
