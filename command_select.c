@@ -18,10 +18,14 @@ void (*get_command(char *op, unsigned int count))(stack_t **, unsigned int)
 	instruction_t list[] = {
 		{"pall", pall_m},
 		{"pint", pint_m},
+		{"pop", pop_m},
+		{"swap", swap_m},
+		{"add", add_m},
+		{"nop", nop_m},
 		{NULL, NULL}
 	};
 
-	while (i < 2)
+	while (i < 6)
 	{
 		comparison = strcmp(op, list[i].opcode);
 		if (comparison == 0)

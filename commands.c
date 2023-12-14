@@ -63,3 +63,58 @@ void pint_m(stack_t **head, unsigned int line)
 		pint_err(line);
 	printf("%u\n", (*head)->n);
 }
+
+/**
+ * pop_m - pop the top node off the stack
+ * @head: the stack top
+ * @line: the current file line number
+*/
+void pop_m(stack_t **head, unsigned int line)
+{
+	stack_t *temp = NULL;
+	if (*head == NULL)
+		pop_err(line);
+	temp = *head;
+	if ((*head)->next != NULL)
+		*head = (*head)->next;
+	free(temp);
+}
+
+/**
+ * swap_m - swap the values of the top two nodes in the stack
+ * @head: the top node of the stack
+ * @line: the current file line number
+*/
+void swap_m(stack_t **head, unsigned int line)
+{
+	int temp = 0;
+	
+	if (*head == NULL)
+		swap_err(line);
+	if ((*head)->next == NULL)
+		swap_err(line);
+
+	temp = (*head)->n;
+	(*head)->n = (*head)->next->n;
+	(*head)->next->n = temp;
+}
+
+/**
+ * add_m - adds the value held in the top node to the second node, then pops.
+ * @head: the top node of the stack
+ * @line: the current file line number
+*/
+void add_m(stack_t **head, unsigned int line)
+{
+	stack_t *temp = NULL;
+
+	if (*head == NULL)
+		add_err(line);
+	temp = *head;
+	if ((*head)->next == NULL)
+		add_err(line);
+
+	(*head)->next->n += (*head)->n;
+	*head = (*head)->next;
+	free(temp);
+}
