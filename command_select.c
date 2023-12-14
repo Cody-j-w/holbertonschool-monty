@@ -16,7 +16,7 @@ void (*get_command(char *op, unsigned int count))(stack_t **, unsigned int)
 	int i = 0;
 	int comparison;
 	instruction_t list[] = {
-		{"pall", push_m},
+		{"pall", pall_m},
 		{"pint", pint_m},
 		{NULL, NULL}
 	};
