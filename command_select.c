@@ -21,7 +21,7 @@ void (*get_command(char *op, unsigned int count))(stack_t **, unsigned int)
 		{"pop", pop_m},
 		{"swap", swap_m},
 		{"add", add_m},
-		{"nop", nop_m},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
