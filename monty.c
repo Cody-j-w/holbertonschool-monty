@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include "monty.h"
 
-unsigned int line_count;
 /**
  * main - main body of program
  * @argc: the count of arguments passed to program
@@ -12,7 +11,6 @@ unsigned int line_count;
  *
  * Return: 0 on success, 1 on error
 */
-
 
 int main(int argc, char *argv[])
 {
@@ -34,21 +32,17 @@ int main(int argc, char *argv[])
 		cmd = cmdstr(strtok(buffer, " \n"));
 		if (strcmp(cmd, "empty") == 0)
 			continue;
-		op_func = get_print(cmd);
-		if (op_func != NULL)
+		if (strcmp(cmd, "push") == 0)
 		{
-			op_func(&stack, 0);
+			temp = strtok(0, " \n");
+			if (temp == NULL)
+				null_int();
+			data = cmdval(temp);
+			push_m(&stack, data);
 			continue;
 		}
-		temp = strtok(0, " \n");
-		if (temp == NULL)
-			null_int();
-		data = cmdval(temp);
 		op_func = get_command(cmd);
-		if (op_func == NULL)
-			null_command(cmd);
-		else
-			op_func(&stack, data);
+		op_func(&stack, line_count);
 	}
 	free_stack(stack);
 	free(buffer);

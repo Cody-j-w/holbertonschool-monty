@@ -52,9 +52,14 @@ void pall_m(stack_t **head, unsigned int data __attribute__((unused)))
 	}
 }
 
-void pint_m(stack_t **head, unsigned int data __attribute__((unused)))
+/**
+ * pint_m - print the data of the top node of the stack
+ * @head: a stack node, the top of the stack
+ * @line: the current file line number, for error handling
+*/
+void pint_m(stack_t **head, unsigned int line)
 {
 	if (*head == NULL)
-		pint_err();
+		pint_err(line);
 	printf("%u\n", (*head)->n);
 }
