@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		cmd = cmdstr(strtok(buffer, " \n"));
 		if (strcmp(cmd, "empty") == 0)
 			continue;
-		op_func = get_print(op);
+		op_func = get_print(cmd);
 		if (op_func != NULL)
 		{
 			op_func(&stack, 0);
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 		}
 		temp = strtok(0, " \n");
 		if (temp == NULL)
-			null_int(count);
+			null_int();
 		data = cmdval(temp);
 		op_func = get_command(cmd);
 		if (op_func == NULL)
