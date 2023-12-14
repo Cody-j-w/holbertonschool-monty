@@ -12,10 +12,12 @@
  * Return: 0 on success, 1 on error
 */
 
+int line_count = 0;
+
 int main(int argc, char *argv[])
 {
 	size_t buffsize = 512;
-	unsigned int data = 0, count = 0;
+	unsigned int data = 0;
 	char *buffer = malloc(buffsize * sizeof(char)), *temp = NULL, *cmd;
 	stack_t *stack = NULL;
 	FILE *file = fopen(argv[1], "r");
@@ -40,10 +42,10 @@ int main(int argc, char *argv[])
 		temp = strtok(0, " \n");
 		if (temp == NULL)
 			null_int(count);
-		data = cmdval(temp, count);
-		op_func = get_command(cmd, count);
+		data = cmdval(temp);
+		op_func = get_command(cmd);
 		if (op_func == NULL)
-			null_command(cmd, count);
+			null_command(cmd);
 		else
 			op_func(&stack, data);
 	}
@@ -91,17 +93,17 @@ char *cmdstr(char *str)
  * otherwise, throw an error
 */
 
-int cmdval(char *str, int count)
+int cmdval(char *str)
 {
 	int i = 0;
 	int valcheck = strcmp(str, "");
 
 	if (str == NULL || valcheck == 0)
-		null_int(count);
+		null_int();
 	while (str[i] != '\0')
 	{
 		if (str[i] < '-' || str[i] > '9')
-			null_int(count);
+			null_int();
 		i++;
 	}
 	return (atoi(str));

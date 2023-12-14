@@ -51,3 +51,9 @@ void pall_m(stack_t **head)
 		temp = temp->next;
 	}
 }
+
+void pint_m(stack_t **head)
+{
+	if (*head == NULL)
+		pint_err();
+}

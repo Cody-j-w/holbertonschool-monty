@@ -11,7 +11,7 @@
  *
  * Return: the requested command, if valid
 */
-void (*get_command(char *op, int count))(stack_t **stack, unsigned int data)
+void (*get_command(char *op))(stack_t **stack, unsigned int data)
 {
 	int i = 0;
 	int comparison;
@@ -27,6 +27,6 @@ void (*get_command(char *op, int count))(stack_t **stack, unsigned int data)
 			return (list[i].f);
 		i++;
 	}
-	null_command(op, count);
+	null_command(op);
 	exit(EXIT_FAILURE);
 }

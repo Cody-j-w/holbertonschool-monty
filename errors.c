@@ -26,9 +26,9 @@ void count_error(void)
  * @command: the string passed as a command
  * @count: the line number the command appears on
 */
-void null_command(char *command, int count)
+void null_command(char *command)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", count, command);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_count, command);
 	exit(EXIT_FAILURE);
 }
 
@@ -36,8 +36,14 @@ void null_command(char *command, int count)
  * null_int - error message for invalid data
  * @count: the line number the error appears on
 */
-void null_int(int count)
+void null_int(void)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", count);
+	fprintf(stderr, "L%d: usage: push integer\n", line_count);
+	exit(EXIT_FAILURE);
+}
+
+void pint_err(void)
+{
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_count);
 	exit(EXIT_FAILURE);
 }

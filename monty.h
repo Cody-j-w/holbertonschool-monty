@@ -33,13 +33,15 @@ typedef struct instruction_s
 
 /*function prototypes*/
 char *cmdstr(char *);
-int cmdval(char *, int);
-void (*get_command(char *op, int count))(stack_t **, unsigned int);
+int cmdval(char *);
+void (*get_command(char *op))(stack_t **, unsigned int);
 void free_stack(stack_t *head);
 void null_file(char *);
-void null_int(int);
+void null_int(void);
 void count_error(void);
-void null_command(char *, int);
+void null_command(char *);
+void pint_err(void);
 void push_m(stack_t **, unsigned int);
 void pall_m(stack_t **);
+void pint_m(stack_t **);
 #endif
