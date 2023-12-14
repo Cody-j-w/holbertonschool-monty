@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "monty.h"
 
+unsigned int line_count;
 /**
  * main - main body of program
  * @argc: the count of arguments passed to program
@@ -11,7 +12,6 @@
  *
  * Return: 0 on success, 1 on error
 */
-
 
 
 int main(int argc, char *argv[])
